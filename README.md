@@ -29,5 +29,12 @@ The playbooks can be found in this repo https://github.com/KierianH/Ansible/tree
 ## Install Chezmoi
 `scoop install chezmoi`
 
+In ~\.config\chezmoi create chezmoi.toml with this content
+``` 
+[git]
+    autoCommit = true
+    autoPush = true
+```
+
 ## Clone Dotfiles
 `chezmoi init --apply KierianH
