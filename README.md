@@ -1,5 +1,3 @@
-# WinDotfiles
-
 ## WSL2 Setup
 Run PS as admin
 `wsl --install`
@@ -35,6 +33,15 @@ In ~\.config\chezmoi create chezmoi.toml with this content
     autoCommit = true
     autoPush = true
 ```
+
+## Powershell customization
+Install Hack Nerdfont here (specifically the bold one) [https://github.com/ryanoasis/nerd-fonts/releases](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/Hack.zip)
+
+Install Powershell (.NET Core Version) `winget install Microsoft.PowerShell`
+
+Install Oh-My-Posh
+
+`scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json`
 
 ## Clone Dotfiles
 `chezmoi init --apply KierianH
