@@ -8,3 +8,6 @@
 
 ## Install Chezmoi
 `scoop install chezmoi`
+
+## Clone Dotfiles
+`chezmoi init --apply KierianH
