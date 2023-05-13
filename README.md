@@ -49,6 +49,7 @@ Install Oh-My-Posh
 
 `scoop install neovim`
 
+chatblade https://github.com/npiv/chatblade
 
 
 ## Clone Dotfiles
