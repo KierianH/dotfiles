@@ -43,5 +43,13 @@ Install Oh-My-Posh
 
 `scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json`
 
+## Misc Program
+
+`scoop install gcc`
+
+`scoop install neovim`
+
+
+
 ## Clone Dotfiles
 `chezmoi init --apply KierianH
