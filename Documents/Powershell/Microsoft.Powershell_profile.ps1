@@ -57,3 +57,9 @@ function Download-File {
     $response = Invoke-WebRequest -Uri $Url -UseBasicParsing
     $response.Content | Set-Content -Path $OutputPath -Encoding Byte
 }
+
+#Set up ssh keys if they aren't already
+$sshKeyPath = "$env:USERPROFILE\.ssh\id_rsa"
+if (-not (Test-Path -Path $sshKeyPath)) {
+    ssh-keygen -t rsa -b 4096 -f $sshKeyPath
+}
