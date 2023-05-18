@@ -1,3 +1,0 @@
-ssh-keygen -t rsa -b 4096 -C "kierianheffron25@gmail.com"
-
-https://learn.microsoft.com/en-us/azure/devops/repos/git/use-ssh-keys-to-authenticate?view=azure-devops
