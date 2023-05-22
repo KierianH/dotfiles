@@ -22,7 +22,7 @@ EnsureNamedWorkspaces(2, "G H J K L M")
 
 ; Assign layouts to workspaces, possible values: bsp, columns, rows, vertical-stack, horizontal-stack, ultrawide-vertical-stack
 NamedWorkspaceLayout("I", "bsp")
-NamedWorkspaceLayout("A", "rows")
+NamedWorkspaceLayout("A", "horizontal-stack")
 NamedWorkspaceLayout("G", "bsp")
 
 ; Set the gaps around the edge of the screen for a workspace
@@ -57,8 +57,8 @@ CompleteConfiguration()
 #+^j::Focus("down")
 #+^k::Focus("up")
 #+^l::Focus("right")
-;#[::CycleFocus("previous")
-;#]::CycleFocus("next")
+#[::CycleFocus("previous")
+#]::CycleFocus("next")
 
 ; Move windows
 #+h::Move("left")
@@ -72,13 +72,13 @@ CompleteConfiguration()
 #Right::Stack("right")
 #Up::Stack("up")
 #Down::Stack("down")
-#+^'::Unstack()
-#+^,::CycleStack("previous")
-#+^.::CycleStack("next")
+#'::Unstack()
+#,::CycleStack("previous")
+#.::CycleStack("next")
 
 ; Resize
-#+^=::ResizeAxis("horizontal", "increase")
-#+^-::ResizeAxis("horizontal", "decrease")
+#=::ResizeAxis("horizontal", "increase")
+#-::ResizeAxis("horizontal", "decrease")
 #+=::ResizeAxis("vertical", "increase")
 #+-::ResizeAxis("vertical", "decrease")
 
@@ -91,15 +91,19 @@ CompleteConfiguration()
 ;!p::TogglePause()
 
 ; Layouts
-;!x::FlipLayout("horizontal")
-;!y::FlipLayout("vertical")
+;#-::FlipLayout("horizontal")
+;#\::FlipLayout("vertical")
+
+;Cylce monitor
+#+,::CycleMonitor("left")
+#+.::CycleMonitor("right")
 
 ; Workspaces
-;#1::FocusWorkspace(0)
-;#2::FocusWorkspace(1)
-;#3::FocusWorkspace(2)
+;#1::FocusMonitor(0)
+;#2::FocusMonitor(1)
+;#3::FocusMonitor(2)
 
 ; Move windows across workspaces
-;#+1::MoveToWorkspace(0)
-;#+2::MoveToWorkspace(1)
-;#+3::MoveToWorkspace(2)
+#+1::MoveToMonitor(0)
+#+2::MoveToMonitor(1)
+#+3::MoveToMonitor(2)
