@@ -49,6 +49,12 @@ Install Oh-My-Posh
 
 `scoop install neovim`
 
+`scoop install go`
+
+```
+$env:CGO_ENABLED = '0'
+go install -ldflags="-s -w" github.com/gokcehan/lf@latest
+```
 chatblade https://github.com/npiv/chatblade
 
 

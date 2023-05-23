@@ -1,0 +1,112 @@
+# interpreter for shell commands
+set shell powershell.exe
+
+# Shell commands with multiline definitions and/or positional arguments and/or
+# quotes do not work in Windows. For anything but the simplest shell commands,
+# it is recommended to create separate script files and simply call them here
+# in commands or mappings.
+#
+# Also, the default keybindings are defined using cmd syntax (i.e. '%EDITOR%')
+# which does not work with powershell. Therefore, you need to override these
+# keybindings with explicit choices accordingly.
+
+# change the default open command to work in powerShell
+cmd open &start $Env:f
+
+# change the editor used in default editor keybinding
+# There is no builtin terminal editor installed in Windows. The default editor
+# mapping uses 'notepad' which launches in a separate GUI window. You may
+# instead install a terminal editor of your choice and replace the default
+# editor keybinding accordingly.
+map e $vim $Env:f
+
+# change the pager used in default pager keybinding
+# The standard pager used in Windows is 'more' which is not a very capable
+# pager. You may instead install a pager of your choice and replace the default
+# pager keybinding accordingly.
+map i $less $Env:f
+
+# change the shell used in default shell keybinding
+map w $powershell
+
+# change 'doc' command to use a different pager
+cmd doc $lf -doc | less
+
+# leave some space at the top and the bottom of the screen
+set scrolloff 10
+
+set filesep " "
+# use enter for shell commands
+map <enter> shell
+
+
+# Basic Settings
+set hidden true
+set ignorecase true
+set icons true
+
+# Custom Functions
+# quick rename using r
+cmd mkdir %{{ 
+    powershell.exe -Command {
+    	Write-Host "Directory Name: "
+        $ans = Read-Host 
+        New-Item -ItemType Directory -Force -Path $ans
+    }
+}}
+
+cmd mkfile %{{ 
+    powershell.exe -Command {
+    	Write-Host "File Name: "
+        $ans = Read-Host 
+        New-Item -ItemType File -Force -Path $ans
+    }
+}}
+
+cmd unarchive !{{ 
+    powershell.exe -Command { 
+
+        $7zPath = "C:\Users\Kieri\scoop\apps\7zip\current\7z.exe"
+        $extension = [IO.Path]::GetExtension("~\Downloads\dwt1-main.zip)
+
+        Write-Host $env:f
+
+        switch ($extension) {
+            ".zip" { Expand-Archive -Path $env:f -DestinationPath . }
+            ".7z" { & $7zPath e $env:f }
+            ".tar.gz" { & $7zPath x $env:f }
+            ".tar.bz2" { & $7zPath x $env:f }
+            ".tar" { & $7zPath x $env:f }
+            default { Write-Host "Unsupported format" }
+        }
+    }
+}}
+
+# Bindings
+map d
+map m
+
+map au unarchive
+map ae $wine "$f"
+
+# Basic Functions
+map . set hidden!
+map dd trash
+map dr restore_trash
+map p paste
+map x cut
+map y copy
+map <enter> open
+map R reload
+map mf mkfile
+map md mkdir
+map C clear
+
+# Movement
+map gD cd ~/documents
+map gd cd ~/downloads
+map gp cd ~/pictures
+map gc cd ~/.config
+map gr cd ~/source/repos
+map gv cd ~/videos
+map ga cd ~/AppData/local
