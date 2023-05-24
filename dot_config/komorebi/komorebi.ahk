@@ -26,13 +26,13 @@ NamedWorkspaceLayout("A", "rows")
 NamedWorkspaceLayout("G", "bsp")
 
 ; Set the gaps around the edge of the screen for a workspace
-NamedWorkspacePadding("I", 5)
-NamedWorkspacePadding("A", 5)
-NamedWorkspacePadding("G", 5)
+NamedWorkspacePadding("I", 10)
+NamedWorkspacePadding("A", 10)
+NamedWorkspacePadding("G", 10)
 ; Set the gaps between the containers for a workspace
-NamedWorkspaceContainerPadding("I", 5)
-NamedWorkspaceContainerPadding("A", 5)
-NamedWorkspaceContainerPadding("G", 5)
+NamedWorkspaceContainerPadding("I", 10)
+NamedWorkspaceContainerPadding("A", 10)
+NamedWorkspaceContainerPadding("G", 10)
 
 ; You can assign specific apps to named workspaces
 ;NamedWorkspaceRule("exe", "msedge.exe", "A")
@@ -43,6 +43,7 @@ InvisibleBorders(7, 0, 14, 7)
 
 ; Uncomment the next lines if you want a visual border around the active window
 ActiveWindowBorder("enable")
+ActiveWindowBorderWidth(14)
 ActiveWindowBorderColour(66, 165, 245, "single")
 ActiveWindowBorderColour(256, 165, 66, "stack")
 ActiveWindowBorderColour(255, 51, 153, "monocle")

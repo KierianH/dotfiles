@@ -35,12 +35,7 @@ Set-Alias unzip Expand-Archive
 Set-Alias download Download-File
 Set-Alias tig 'C:\Program Files\Git\usr\bin\tig.exe'
 Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
-Set-Alias pubapp Publish-App
-Set-Alias publish-linux PublishLinux
-Set-Alias publish-windows PublishWindows
-Set-Alias publish-macos PublishMac
-Set-Alias publish-macos-arm PublishMacArm
-Set-Alias publish-linux-arm PublishLinuxArm
+Set-Alias ai chatblade
 
 # Utilities
 function which ($command) {

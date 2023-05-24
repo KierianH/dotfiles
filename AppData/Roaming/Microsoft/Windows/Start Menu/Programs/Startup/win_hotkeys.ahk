@@ -10,15 +10,8 @@
 ;Powertoys run
 ;F1::!Space
 ;F2::!Space
+;lf (File manager)
+#f::Run 'lf'
+;run thokr typing trainer
+#t::Run 'thokr -w 20 -l english1k'
 
-;This weirdness is to make super open numbered apps via win key num shotrcut
-#+^1::#1
-#+^2::#2
-#+^3::#3
-#+^4::#4
-#+^5::#5
-#+^6::#6
-#+^7::#7
-#+^8::#8
-#+^9::#9
-#+^0::#0

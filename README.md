@@ -49,8 +49,19 @@ Install Oh-My-Posh
 
 `scoop install neovim`
 
-chatblade https://github.com/npiv/chatblade
+`scoop install neofetch`
 
+`scoop install rust`
+
+`cargo install thokr`
+
+`scoop install python`
+
+`python -m pip install -U pip`
+
+### Install chatblade -note need admin perms for this
+`pip install 'chatblade @ git+https://github.com/npiv/chatblade'`
+`pip install chatblade --upgrade`
 
 ## Clone Dotfiles
 `chezmoi init --apply KierianH

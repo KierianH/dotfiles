@@ -93,7 +93,10 @@ require('lazy').setup({
       require('onedark').load()
     end,
   },
-
+    -- Tutor plugins
+  {
+    'ThePrimeagen/vim-be-good',
+  },
 
 
   { -- Set lualine as statusline
@@ -120,8 +123,20 @@ require('lazy').setup({
   },
 
   -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
-
+  { 'numToStr/Comment.nvim', opts = {
+      toggler = {
+       ---Line-comment toggle keymap
+        -- line = '<C-_>',
+        line = '<gc>',
+        ---Block-comment toggle keymap
+        block = 'gb',
+     },
+      opleader = {
+      line = 'gc',
+      block = 'gb',
+      },
+    },
+  },
   -- Fuzzy Finder (files, lsp, etc)
   { 'nvim-telescope/telescope.nvim', version = '*', dependencies = { 'nvim-lua/plenary.nvim' } },
 
@@ -197,6 +212,9 @@ vim.wo.signcolumn = 'yes'
 vim.o.updatetime = 250
 vim.o.timeout = true
 vim.o.timeoutlen = 300
+
+-- Relate line number
+vim.o.relativenumber = true
 
 -- Set completeopt to have a better completion experience
 vim.o.completeopt = 'menuone,noselect'

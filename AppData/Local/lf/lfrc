@@ -98,7 +98,7 @@ cmd deleteItem %{{
     }
 }}
 
-cmd copyPath ${{ 
+cmd copyPath %{{ 
     powershell.exe -Command { 
        Set-Clipboard (Resolve-Path $env:f.Trim('"')) 
     }
@@ -120,6 +120,7 @@ map az archive
 map v %C:\Users\Kieri\scoop\apps\quicklook\3.7.3\QuickLook.exe $env:f.Trim('"')
 
 # Basic Functions
+map e $vim $env:f.Trim('"')
 map . set hidden!
 map <delete> deleteItem
 map yy copyPath
@@ -135,9 +136,13 @@ map C clear
 # Movement
 map gD cd ~/documents
 map gd cd ~/downloads
-map gp cd ~/pictures
+map gpc cd ~/pictures
 map gc cd ~/.config
 map gr cd ~/source/repos
 map gv cd ~/videos
 map ga cd ~/AppData/local
-map gn cd ~/notes
+map gnt cd ~/notes
+map gs cd '~\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup'
+map glf cd '~\AppData\local\lf'
+map gnv cd '~\AppData\local\nvim'
+map gps cd '~\Documents\PowerShell'
