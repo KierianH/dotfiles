@@ -22,7 +22,7 @@ EnsureNamedWorkspaces(2, "G H J K L M")
 
 ; Assign layouts to workspaces, possible values: bsp, columns, rows, vertical-stack, horizontal-stack, ultrawide-vertical-stack
 NamedWorkspaceLayout("I", "bsp")
-NamedWorkspaceLayout("A", "horizontal-stack")
+NamedWorkspaceLayout("A", "rows")
 NamedWorkspaceLayout("G", "bsp")
 
 ; Set the gaps around the edge of the screen for a workspace

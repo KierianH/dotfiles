@@ -31,3 +31,9 @@ $ md
 : createdir Test
 : createdir 
 : createdir Test
+$ chez add lf
+: copy-path
+: copy-path
+: copyPath
+: copyPath
+: copyPath

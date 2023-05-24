@@ -1,5 +1,5 @@
 # interpreter for shell commands
-set shell powershell.exe
+set shell pwsh
 
 # Shell commands with multiline definitions and/or positional arguments and/or
 # quotes do not work in Windows. For anything but the simplest shell commands,
@@ -63,16 +63,14 @@ cmd mkfile %{{
     }
 }}
 
-cmd unarchive !{{ 
+cmd unarchive %{{ 
     powershell.exe -Command { 
 
         $7zPath = "C:\Users\Kieri\scoop\apps\7zip\current\7z.exe"
-        $extension = [IO.Path]::GetExtension("~\Downloads\dwt1-main.zip)
-
-        Write-Host $env:f
+        $extension = [IO.Path]::GetExtension($env:f.Trim('"'))
 
         switch ($extension) {
-            ".zip" { Expand-Archive -Path $env:f -DestinationPath . }
+            ".zip" { Expand-Archive -Path $env:f.Trim('"') -DestinationPath $env:f.Trim('"').Trim('.zip') }
             ".7z" { & $7zPath e $env:f }
             ".tar.gz" { & $7zPath x $env:f }
             ".tar.bz2" { & $7zPath x $env:f }
@@ -82,20 +80,52 @@ cmd unarchive !{{
     }
 }}
 
+cmd archive %{{ 
+    powershell.exe -Command { 
+
+        $7zPath = "C:\Users\Kieri\scoop\apps\7zip\current\7z.exe"
+
+        # Ask user for the name of the new archive
+        $archiveName = Read-Host -Prompt 'Enter name for new archive' 
+
+        Compress-Archive -Path $env:f.Trim('"') -DestinationPath "$archiveName.zip"
+    }
+}}
+
+cmd deleteItem %{{ 
+    powershell.exe -Command { 
+        Remove-Item -Path $env:f.Trim('"') 
+    }
+}}
+
+cmd copyPath ${{ 
+    powershell.exe -Command { 
+       Set-Clipboard (Resolve-Path $env:f.Trim('"')) 
+    }
+}}
+# If win terminal ever supports photo preview revisit this
+# cmd openPhotos !{{
+#     pwsh.exe -Command {
+#        start .\scoop\apps\quicklook\3.7.3\QuickLook.exe $env:f.Trim('"')
+#     }
+# }}
+
 # Bindings
 map d
 map m
+map y
 
 map au unarchive
-map ae $wine "$f"
+map az archive
+map v %C:\Users\Kieri\scoop\apps\quicklook\3.7.3\QuickLook.exe $env:f.Trim('"')
 
 # Basic Functions
 map . set hidden!
-map dd trash
-map dr restore_trash
+map <delete> deleteItem
+map yy copyPath
 map p paste
-map x cut
-map y copy
+map d cut
+map yf copy
 map <enter> open
 map R reload
 map mf mkfile
@@ -110,3 +140,4 @@ map gc cd ~/.config
 map gr cd ~/source/repos
 map gv cd ~/videos
 map ga cd ~/AppData/local
+map gn cd ~/notes

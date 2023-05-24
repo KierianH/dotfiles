@@ -2,8 +2,7 @@
 [console]::InputEncoding = [console]::OutputEncoding = New-Object System.Text.UTF8Encoding
 
 #Oh My Posh
-oh-my-posh init pwsh --config C:\Users\Kieri\Documents\Powershell\kierian.omp.json | Invoke-Expression
-
+oh-my-posh init pwsh --config ~/OMPThemes/rudolfs-dark.omp.json| Invoke-Expression
 #Modules
 #Install-Module z
 #Install-Module posh-git
@@ -36,6 +35,12 @@ Set-Alias unzip Expand-Archive
 Set-Alias download Download-File
 Set-Alias tig 'C:\Program Files\Git\usr\bin\tig.exe'
 Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
+Set-Alias pubapp Publish-App
+Set-Alias publish-linux PublishLinux
+Set-Alias publish-windows PublishWindows
+Set-Alias publish-macos PublishMac
+Set-Alias publish-macos-arm PublishMacArm
+Set-Alias publish-linux-arm PublishLinuxArm
 
 # Utilities
 function which ($command) {
@@ -62,4 +67,20 @@ function Download-File {
 $sshKeyPath = "$env:USERPROFILE\.ssh\id_rsa"
 if (-not (Test-Path -Path $sshKeyPath)) {
     ssh-keygen -t rsa -b 4096 -f $sshKeyPath
+}
+
+function PublishWindows {
+    dotnet publish -c Release --self-contained true -r win-x64 --output ./Notes/Release/windows-x64 --framework net7.0 /p:PublishSingleFile=true /p:PublishTrimmed=true
+}
+function PublishLinux {
+    dotnet publish -c Release --self-contained true -r linux-x64 --output ./Notes/Release/linux-x64 --framework net7.0 /p:PublishSingleFile=true /p:PublishTrimmed=true
+}
+function PublishMac {
+    dotnet publish -c Release --self-contained true -r osx-x64 --output ./Notes/Release/macos-x64 --framework net7.0 /p:PublishSingleFile=true /p:PublishTrimmed=true
+}
+function PublishMacArm {
+    dotnet publish -c Release --self-contained true -r osx-arm64 --output ./Notes/Release/macos-arm64 --framework net7.0 /p:PublishSingleFile=true /p:PublishTrimmed=true
+}
+function PublishLinuxArm {
+    dotnet publish -c Release --self-contained true -r linux-arm --output ./Notes/Release/linux-arm --framework net7.0 /p:PublishSingleFile=true /p:PublishTrimmed=true
 }
