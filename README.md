@@ -19,49 +19,22 @@ The playbooks can be found in this repo https://github.com/KierianH/Ansible/tree
 `ansible-playbook playbook.yml`
 
 # Windows Set Up Steps
-## Install Scoop
+## Install Scoop (Might be able to skip this)
 `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time`
 
-`irm get.scoop.sh | iex`
-
-## Install Chezmoi
-`scoop install chezmoi`
-
-In ~\.config\chezmoi create chezmoi.toml with this content
-``` 
-[git]
-    autoCommit = true
-    autoPush = true
-```
 
 ## Powershell customization
 Install Hack Nerdfont here (specifically the bold one) [https://github.com/ryanoasis/nerd-fonts/releases](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/Hack.zip)
-
-Install Powershell (.NET Core Version) `winget install Microsoft.PowerShell`
-
-Install Oh-My-Posh
-
-`scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json`
-
-## Misc Program
-
-`scoop install gcc`
-
-`scoop install neovim`
-
-`scoop install neofetch`
-
-`scoop install rust`
-
-`cargo install thokr`
-
-`scoop install python`
-
-`python -m pip install -U pip`
 
 ### Install chatblade -note need admin perms for this
 `pip install 'chatblade @ git+https://github.com/npiv/chatblade'`
 `pip install chatblade --upgrade`
 
-## Clone Dotfiles
-`chezmoi init --apply KierianH
+## Install Rider
+Install rider manually for now with jettbrains toolbox
+
+## Set Up Powertoys
+Restore from backup in ~/Documents\PowerToys\Backup\ folder
+
+## Set Up Rider
+Import Settings stored in ~/.config/rider
