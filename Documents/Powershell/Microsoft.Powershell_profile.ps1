@@ -36,6 +36,7 @@ Set-Alias download Download-File
 Set-Alias tig 'C:\Program Files\Git\usr\bin\tig.exe'
 Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
 Set-Alias ai chatblade
+Set-Alias lf lfcd
 
 # Utilities
 function which ($command) {
@@ -59,10 +60,10 @@ function Download-File {
 }
 
 #Set up ssh keys if they aren't already
-$sshKeyPath = "$env:USERPROFILE\.ssh\id_rsa"
-if (-not (Test-Path -Path $sshKeyPath)) {
-    ssh-keygen -t rsa -b 4096 -f $sshKeyPath
-}
+# $sshKeyPath = "$env:USERPROFILE\.ssh\id_rsa"
+# if (-not (Test-Path -Path $sshKeyPath)) {
+#     ssh-keygen -t rsa -b 4096 -f $sshKeyPath
+# }
 
 function PublishWindows {
     dotnet publish -c Release --self-contained true -r win-x64 --output ./Notes/Release/windows-x64 --framework net7.0 /p:PublishSingleFile=true /p:PublishTrimmed=true
@@ -79,3 +80,19 @@ function PublishMacArm {
 function PublishLinuxArm {
     dotnet publish -c Release --self-contained true -r linux-arm --output ./Notes/Release/linux-arm --framework net7.0 /p:PublishSingleFile=true /p:PublishTrimmed=true
 }
+
+#This function makes it so that when we use lf we exit the current dir
+function LFCD {
+    $tmp = [System.IO.Path]::GetTempFileName()
+    cmd /c lf -last-dir-path="$tmp" $args
+    if (Test-Path -PathType Leaf "$tmp") {
+        $dir = Get-Content "$tmp"
+        Remove-Item -Force "$tmp"
+        if (Test-Path -PathType Container "$dir") {
+            if ("$dir" -ne "$pwd") {
+                cd "$dir"
+            }
+        }
+    }
+}
+

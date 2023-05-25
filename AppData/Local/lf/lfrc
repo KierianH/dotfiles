@@ -117,7 +117,7 @@ map y
 
 map au unarchive
 map az archive
-map v %C:\Users\Kieri\scoop\apps\quicklook\3.7.3\QuickLook.exe $env:f.Trim('"')
+map v &C:\Users\Kieri\scoop\apps\quicklook\3.7.3\QuickLook.exe $env:f.Trim('"')
 
 # Basic Functions
 map e $vim $env:f.Trim('"')
