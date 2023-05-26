@@ -1,7 +1,14 @@
+# Set Up Steps
+
 ## Home Folder One Drive Nonsense
 Sometimes windows likes to put home folders in one drive this need a registry edit to fix as seen [here](https://answers.microsoft.com/en-us/windows/forum/all/documents-folder-stuck-under-onedrive-and-shows/1985b6b1-34c8-4297-ab12-bbecd35b8e70).
 
-# Set Up Steps
+## Install Rider
+Install rider manually for now with jettbrains toolbox
+
+## Install Visual Studio
+Include ASP.net, Azure dev, MAUI, Desktop dev C# & C++, Universsal Windows Platform
+
 ## Allow Scripts
 `Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser`
 
@@ -13,9 +20,6 @@ Edit $PROFILE and uncomment any lines for new pwsh modules
 
 ## Powershell customization
 Install Hack Nerdfont here (specifically the bold one) [https://github.com/ryanoasis/nerd-fonts/releases](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.0/Hack.zip)
-
-## Install Rider
-Install rider manually for now with jettbrains toolbox
 
 ## Set Up Powertoys
 Restore from backup in ~/Documents\PowerToys\Backup\ folder
