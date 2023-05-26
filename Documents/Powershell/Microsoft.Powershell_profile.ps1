@@ -4,10 +4,10 @@
 #Oh My Posh
 oh-my-posh init pwsh --config ~/OMPThemes/rudolfs-dark.omp.json| Invoke-Expression
 #Modules
-#Install-Module z
-#Install-Module posh-git
-#Install-Module Terminal-Icons
-#Install-Module PsFzf
+# Install-Module z
+# Install-Module posh-git
+# Install-Module Terminal-Icons
+# Install-Module PsFzf
 
 # PSReadLine
 Set-PSReadLineOption -EditMode Emacs

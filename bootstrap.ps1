@@ -26,10 +26,11 @@ foreach ($bucket in $requiredBuckets) {
 scoop update
 
 # Install required applications with scoop
-$appsToInstall = @('komorebi', 'extras/windows-terminal', 'autohotkey', 'git-credential-manager', 'chezmoi', 'googlechrome', 
-                   'https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json', 'gcc', 'go', '7zip', 'fzf', 
-                   'extras/powertoys', 'quicklook', 'main/nodejs', 'extras/openvpn-connect', 'nonportable/sql-server-management-studio-np', 'neovim', 
-                   'neofetch', 'rust', 'python')
+$appsToInstall = @('komorebi', 'extras/windows-terminal', 'autohotkey', 'versions/autohotkey1.1', 'git-credential-manager',
+                   'chezmoi', 'googlechrome',
+                   'https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json', 'gcc', 'go', 
+                   '7zip', 'fzf', 'extras/powertoys', 'quicklook', 'main/nodejs', 'extras/openvpn-connect',
+                   'nonportable/sql-server-management-studio-np', 'neovim', 'neofetch', 'rust', 'python')
 foreach ($app in $appsToInstall) {
     scoop install $app
 }
