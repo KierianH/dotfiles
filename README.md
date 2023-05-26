@@ -4,6 +4,10 @@ Run PS as admin
 
 `wsl --set-default-version 2`
 
+`Install Ubuntu from MS Store`
+
+`Update Windows and Reboot`
+
 `sudo apt-get update`
 
 `sudo apt-get install python3 python3-pip`
