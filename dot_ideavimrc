@@ -104,7 +104,7 @@ nmap <leader>ww :action SaveAll<CR>
 "map <leader>gc <Action>(CheckinProject)
 map <leader>gw <Action>(ActivateVersionControlToolWindow)
 map <leader>gb <Action>(Git.Branches)
-map <leader>vu <Action>(UpdateProject)
+map <leader>gU <Action>(UpdateProject)
 
 " Errors
 map <leader>e. <Action>(ReSharperGotoNextErrorInSolution)

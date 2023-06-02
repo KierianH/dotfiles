@@ -9,6 +9,9 @@ Install rider manually for now with jettbrains toolbox
 ## Install Visual Studio
 Include ASP.net, Azure dev, MAUI, Desktop dev C# & C++, Universsal Windows Platform
 
+## Install Postgres
+https://www.enterprisedb.com/downloads/postgres-postgresql-downloads
+
 ## Allow Scripts
 `Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser`
 
