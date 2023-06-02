@@ -4,20 +4,6 @@
     "actions": 
     [
         {
-            "command": "find",
-            "keys": "ctrl+shift+f"
-        },
-        {
-            "command": 
-            {
-                "action": "scrollDown"
-            }
-        },
-        {
-            "command": "paste",
-            "keys": "ctrl+v"
-        },
-        {
             "command": 
             {
                 "action": "newTab",
@@ -26,12 +12,30 @@
             "keys": "ctrl+1"
         },
         {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
+        {
             "command": 
             {
-                "action": "moveFocus",
-                "direction": "down"
+                "action": "splitPane",
+                "split": "auto",
+                "splitMode": "duplicate"
             },
-            "keys": "ctrl+j"
+            "keys": "alt+shift+d"
+        },
+        {
+            "command": 
+            {
+                "action": "scrollDown"
+            }
+        },
+        {
+            "command": 
+            {
+                "action": "newTab"
+            },
+            "keys": "ctrl+t"
         },
         {
             "command": 
@@ -42,21 +46,16 @@
             "keys": "ctrl+\\"
         },
         {
-            "command": 
-            {
-                "action": "copy",
-                "singleLine": false
-            },
-            "keys": "ctrl+c"
+            "command": "paste",
+            "keys": "ctrl+v"
         },
         {
             "command": 
             {
-                "action": "splitPane",
-                "split": "auto",
-                "splitMode": "duplicate"
+                "action": "moveFocus",
+                "direction": "down"
             },
-            "keys": "alt+shift+d"
+            "keys": "ctrl+j"
         },
         {
             "command": "unbound",
@@ -165,6 +164,14 @@
         {
             "command": 
             {
+                "action": "copy",
+                "singleLine": false
+            },
+            "keys": "ctrl+c"
+        },
+        {
+            "command": 
+            {
                 "action": "newTab",
                 "index": 2
             }
@@ -172,8 +179,24 @@
         {
             "command": 
             {
+                "action": "splitPane",
+                "split": "down"
+            },
+            "keys": "ctrl+minus"
+        },
+        {
+            "command": 
+            {
                 "action": "scrollUp"
             }
+        },
+        {
+            "command": 
+            {
+                "action": "moveFocus",
+                "direction": "right"
+            },
+            "keys": "ctrl+l"
         },
         {
             "command": 
@@ -195,14 +218,6 @@
             "command": 
             {
                 "action": "moveFocus",
-                "direction": "right"
-            },
-            "keys": "ctrl+l"
-        },
-        {
-            "command": 
-            {
-                "action": "moveFocus",
                 "direction": "up"
             },
             "keys": "ctrl+k"
@@ -214,13 +229,6 @@
                 "index": 0
             },
             "keys": "alt+1"
-        },
-        {
-            "command": 
-            {
-                "action": "newTab"
-            },
-            "keys": "ctrl+t"
         },
         {
             "command": 
@@ -246,14 +254,6 @@
                 "action": "commandPalette"
             },
             "keys": "ctrl+enter"
-        },
-        {
-            "command": 
-            {
-                "action": "splitPane",
-                "split": "down"
-            },
-            "keys": "ctrl+minus"
         }
     ],
     "copyFormatting": "none",
@@ -296,24 +296,6 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "guid": "{2bc903a6-af43-5155-baf9-5681fcfee53b}",
-                "hidden": true,
-                "name": "Developer Command Prompt for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{e26733cd-0f55-59cb-aaa6-99b01f42c568}",
-                "hidden": true,
-                "name": "Developer PowerShell for VS 2022",
-                "source": "Windows.Terminal.VisualStudio"
-            },
-            {
-                "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
-                "hidden": true,
-                "name": "Visual Studio Debug Console",
-                "source": "VSDebugConsole"
-            },
-            {
                 "guid": "{51855cb2-8cce-5362-8f54-464b92b32386}",
                 "hidden": false,
                 "name": "Ubuntu",
@@ -333,6 +315,18 @@
                 "source": "Windows.Terminal.PowershellCore",
                 "startingDirectory": "%USERPROFILE%",
                 "useAcrylic": true
+            },
+            {
+                "guid": "{992a1dcf-2a14-5358-baea-d456f3218282}",
+                "hidden": false,
+                "name": "Developer Command Prompt for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
+            },
+            {
+                "guid": "{8f2713af-f27e-594d-bd2c-fe017255c60e}",
+                "hidden": false,
+                "name": "Developer PowerShell for VS 2022",
+                "source": "Windows.Terminal.VisualStudio"
             }
         ]
     },
@@ -592,6 +586,5 @@
             "yellow": "#808000"
         }
     ],
-    "themes": [],
     "useAcrylicInTabRow": true
 }

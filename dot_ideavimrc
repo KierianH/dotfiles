@@ -24,6 +24,8 @@ set incsearch
 set hlsearch
 set highlightedyank
 set nerdtree
+set ideajoin
+set idearefactormode=keep
 " set which-key
 
 " Basic Keymaps
@@ -31,7 +33,14 @@ nnoremap <Space> <Nop>
 vnoremap <Space> <Nop>
 nnoremap k gk
 nnoremap j gj
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
 
+" Reload .ideavimrc
+nnoremap <leader>rc :action IdeaVim.ReloadVimRc.reload<CR>
+
+" Distraction free mode
+nnoremap <c-z> :action ToggleDistractionFreeMode<CR>
 " Popup navigation
 inoremap <C-j> <Action>(PopupMenu-selectNext)
 inoremap <C-k> <Action>(PopupMenu-selectPrev)
@@ -40,6 +49,7 @@ inoremap <C-k> <Action>(PopupMenu-selectPrev)
 map <leader>ff <action>(GotoFile)
 map <leader>fr <action>(RecentFiles)
 map <leader>fp <action>(FindInPath)
+map <leader>fa :action GotoAction<CR>
 map <leader><leader> <Action>(RecentFiles)
 map <leader>fl <action>(RecentLocations)
 map <leader>fs <action>(NewScratchFile)
@@ -53,13 +63,25 @@ map <leader><enter> <action>(SearchEverywhere)
 map <leader>q <action>(CloseActiveEditor)
 
 " Go to code
+nnoremap gC :action GotoClass<CR>
 nmap gd <Action>(GotoDeclaration)
 nmap gy <Action>(GotoTypeDeclaration)
 nmap gi <Action>(GotoImplementation)
 nmap gu <Action>(ShowUsages)
 nmap gt <Action>(GotoTest)
+nnoremap gh :action LocalHistory.ShowHistory<CR>
 nmap <leader>, <Action>(Back)
 nmap <leader>. <Action>(Forward)
+vnoremap < <gv
+vnoremap > >gv
+nnoremap [[ :action MethodUp<CR>
+nnoremap ]] :action MethodDown<CR>
+
+"Folding
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
+nnoremap <leader>zc :action CollapseAllRegions<CR>
+nnoremap <leader>zo :action ExpandAllRegions<CR>
 
 " Refactoring
 map <leader>rn <Action>(RenameElement)
@@ -68,19 +90,21 @@ map <leader>rv <Action>(IntroduceVariable)
 map <leader>rf <Action>(IntroduceField)
 map <leader>rs <Action>(ChangeSignature)
 map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+nnoremap <Leader>r=  :action ReformatCode<CR>
+nnoremap <leader>ri :action OptimizeImports<CR>
 
 "Misc
 map <C-Space> :action CodeCompletion<CR>
 map <leader>rf :action ReformatCode<CR>
 map gc <action>(CommentByLineCommentn
 map gb <action>(CommentByBlockComment)
-map <leader>fa :action FindAction<CR>
 nmap <leader>ww :action SaveAll<CR>
 
 " Git windows
 "map <leader>gc <Action>(CheckinProject)
 map <leader>gw <Action>(ActivateVersionControlToolWindow)
 map <leader>gb <Action>(Git.Branches)
+map <leader>vu <Action>(UpdateProject)
 
 " Errors
 map <leader>e. <Action>(ReSharperGotoNextErrorInSolution)
@@ -102,6 +126,7 @@ map <leader>vp <Action>(ActivateProblemsViewToolWindow)
 map <leader>vr <Action>(ActivateRunToolWindow)
 " map <leader>vS <Action>(ActivateServicesToolWindow )
 map <leader>vs <Action>(ActivateStructureToolWindow)
+nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
 map <leader>vt <Action>(ActivateTerminalToolWindow)
 map <leader>vT <Action>(ActivateTODOToolWindow)
 map <leader>vv <Action>(ActivateVersionControlToolWindow)
@@ -112,6 +137,10 @@ map <leader>vE <Action>(ActivateEndpointsToolWindow)
 " Open NERDTree (use q to exit)
 map <leader>ve :NERDTreeToggle<CR>
 
+"run/Debug
+nnoremap <leader>ar :action ChooseRunConfiguration<CR>
+nnoremap <leader>aa :action Rerun<CR>
+nnoremap <leader>as :action Stop<CR>
 "
 " Which-key settings
 " set which-key

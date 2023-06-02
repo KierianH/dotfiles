@@ -1,12 +1,12 @@
 ﻿#Requires AutoHotkey v2
 ;windows dictation
 #m::#h
-;color picker
-#c::#+c
 ;snipping tool
 #s::#+s
 ;close app
 #q::!f4
+;minimize current window
+#w::#Down
 ;Powertoys run
 ;F1::!Space
 ;F2::!Space
