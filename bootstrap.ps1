@@ -30,7 +30,7 @@ $appsToInstall = @('komorebi', 'extras/windows-terminal', 'autohotkey', 'version
                    'chezmoi', 'googlechrome',
                    'https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json', 'gcc', 'go', 
                    '7zip', 'fzf', 'extras/powertoys', 'quicklook', 'main/nodejs', 'extras/openvpn-connect',
-                   'nonportable/sql-server-management-studio-np', 'neovim', 'neofetch', 'rust', 'python')
+                   'neovim', 'neofetch', 'python')
 foreach ($app in $appsToInstall) {
     scoop install $app
 }
@@ -71,7 +71,7 @@ cargo install thokr
 python -m pip install -U pip
 
 # Install chatblade
-pip install 'chatblade @ git+https://github.com/npiv/chatblade
+pip install 'chatblade@git+https://github.com/npiv/chatblade'
 pip install chatblade --upgrade
 
 # Clone Dotfiles
