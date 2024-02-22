@@ -44,6 +44,7 @@ winget install 9PKTQ5699M62
 # Configure git
 git config --global user.name "Kierian"
 git config --global user.email "kierianheffron25@gmail.com"
+git config --global credential.https://dev.azure.com.useHttpPath true
 
 # Configure ssh
 ssh-keygen -t rsa -b 4096 -C "kierianheffron25@gmail.com"
