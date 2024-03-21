@@ -13,5 +13,5 @@
 ;lf (File manager)
 #f::Run 'lf'
 ;run thokr typing trainer
-#t::Run 'thokr -w 20 -l english1k'
+#t::Run 'thokr'
 

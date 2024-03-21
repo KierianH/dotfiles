@@ -4,6 +4,10 @@
     "actions": 
     [
         {
+            "command": "paste",
+            "keys": "ctrl+v"
+        },
+        {
             "command": 
             {
                 "action": "newTab",
@@ -12,12 +16,10 @@
             "keys": "ctrl+1"
         },
         {
-            "command": "paste",
-            "keys": "ctrl+v"
-        },
-        {
-            "command": "find",
-            "keys": "ctrl+shift+f"
+            "command": 
+            {
+                "action": "scrollDown"
+            }
         },
         {
             "command": 
@@ -29,10 +31,16 @@
             "keys": "alt+shift+d"
         },
         {
+            "command": "find",
+            "keys": "ctrl+shift+f"
+        },
+        {
             "command": 
             {
-                "action": "scrollDown"
-            }
+                "action": "splitPane",
+                "split": "down"
+            },
+            "keys": "ctrl+minus"
         },
         {
             "command": "unbound",
@@ -141,10 +149,10 @@
         {
             "command": 
             {
-                "action": "splitPane",
-                "split": "down"
+                "action": "moveFocus",
+                "direction": "down"
             },
-            "keys": "ctrl+minus"
+            "keys": "ctrl+j"
         },
         {
             "command": 
@@ -153,14 +161,6 @@
                 "split": "right"
             },
             "keys": "ctrl+\\"
-        },
-        {
-            "command": 
-            {
-                "action": "moveFocus",
-                "direction": "down"
-            },
-            "keys": "ctrl+j"
         },
         {
             "command": 
@@ -291,6 +291,8 @@
                 "useAcrylic": false
             },
             {
+                "backgroundImage": "C:\\Users\\Kierian\\OneDrive\\Pictures\\WallPapers\\NatureBG\\0005.jpg",
+                "backgroundImageOpacity": 0.26,
                 "commandline": "%SystemRoot%\\System32\\cmd.exe",
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": true,
@@ -328,6 +330,7 @@
                 "useAcrylic": true
             },
             {
+                "backgroundImage": "C:\\Users\\Kierian\\OneDrive\\Pictures\\WallPapers\\NatureBG\\0005.jpg",
                 "guid": "{16208362-94fc-5b1f-a491-5b2624d5ab56}",
                 "hidden": true,
                 "name": "Visual Studio Debug Console",

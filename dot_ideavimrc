@@ -63,7 +63,8 @@ map <leader>am <action>(ShowIntentionActions)
 map <leader><enter> <action>(SearchEverywhere)
 
 " Close active tab
-map <leader>q <action>(CloseActiveEditor)
+nnoremap <C-q> :bd<CR>
+" map <leader>q <action>(CloseActiveEditor)
 
 " Go to code
 nnoremap gC :action GotoClass<CR>
